@@ -16,7 +16,7 @@ public class PainelTabuleiro extends JPanel {
 		
 		int total = tabuleiro.getLinhas() * tabuleiro.getColunas();
 		
-		tabuleiro.paraCadaCampo(c -> new BotaoCampo(c));
+		tabuleiro.paraCadaCampo(c -> add(new BotaoCampo(c)));
 		
 		tabuleiro.registrarObservadores(e -> {
 			//TODO mostrar resultado pro usuário!
