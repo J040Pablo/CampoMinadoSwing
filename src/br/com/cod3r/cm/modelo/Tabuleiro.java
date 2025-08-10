@@ -111,7 +111,6 @@ public class Tabuleiro implements CampoObservador {
 			notificarObservadores(false);
 		} else if(objetivoAlcancado()) {
 			notificarObservadores(true);
-			System.out.println("Ganhou... :)");
 		}
 		
 	}
@@ -119,6 +118,7 @@ public class Tabuleiro implements CampoObservador {
 	private void mostrarMinas() {
 		campos.stream()
 			.filter(c -> c.isMinado())
+			.filter(c -> !c.isMarcado())
 			.forEach(c -> c.setAberto(true));
 	}
 }
